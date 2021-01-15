@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    
+    <title>Color Shopping Cart</title>
+  </head>
+
+  <body>
+    <div id="background">
+        <img src="background_image.png" alt="background image">
+    </div>
+      
+    <div class="container-fluid">
+        <div id="page-wrap">
+            
+            <h1 class="Bold main-tittle">HICKIES Originals</h1>
+            
+            <div style="text-indent: 6px;">
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="fas fa-star"></span>
+                <span class="grey"> 1,293 reviews</span>
+
+            </div>
+            <div>
+                <span class="sign">$</span><span class="price" id="price">14.99</span> <span class="grey">$</span><span class="grey" id="originalPrice">17.99</span> 
+                <span class="grey bold">25% OFF</span>
+            </div>
+            <p style="text-indent: 6px;">ONLINE EXCLUSIVE</p> 
+            
+            <div id="all_color_btn">
+
+                <span class="Bold bold">COLOR:</span> 
+                <span id="color">Select colour</span><br>
+                <button id="Red" onclick="change(this.id)"  type="button" class="btn red circle-btn sm" ></button>
+                <button id="Purple" onclick="change(this.id)" type="button" class="btn purple circle-btn sm"></button> 
+                <button id="Black" onclick="change(this.id)" type="button" class="btn black circle-btn sm"></button>
+                <button id="White" onclick="change(this.id)" type="button" class="btn white circle-btn sm"></button> 
+                <button id="Orange" onclick="change(this.id)" type="button" class="btn orange circle-btn sm"></button> 
+                <button id="Yellow" onclick="change(this.id)" type="button" class="btn yellow circle-btn sm"></button> 
+                <button id="Blue" onclick="change(this.id)" type="button" class="btn blue circle-btn sm"></button> 
+                <button id="Navy" onclick="change(this.id)" type="button" class="btn navy circle-btn sm"></button> 
+                <button id="LightBrown" onclick="change(this.id)" type="button" class="btn light-brown circle-btn sm"></button> 
+                <button id="LightBlue" onclick="change(this.id)" type="button" class="btn light-blue circle-btn sm"></button> 
+                <button id="LightGreen" onclick="change(this.id)" type="button" class="btn light-green circle-btn sm"></button> 
+                <button id="Pink" onclick="change(this.id)" type="button" class="btn pink circle-btn sm"></button> 
+                <button id="LightBrown" onclick="change(this.id)" type="button" class="btn light-brown circle-btn sm"></button> 
+                <button id="Green" onclick="change(this.id)" type="button" class="btn green circle-btn sm"></button> 
+                <button id="Grey" onclick="change(this.id)" type="button" class="btn grey circle-btn sm"></button>
+                <button id="Brown" onclick="change(this.id)" type="button" class="btn brown circle-btn sm"></button>
+                <button id="Aqua" onclick="change(this.id)" type="button" class="btn aqua circle-btn sm"></button>
+                <button id="LightGray" onclick="change(this.id)" type="button" class="btn light-grey circle-btn sm"></button>
+                
+            </div>
+    
+            <div><span class="Bold detail">Size Guide</span></div>
+            <div><span class="Bold detail">Your Custom Fit</span></div>
+
+            <button type="button" id="count"class="btn btn-outline-dark qty md" >0</button>
+            <button type="button" id="add" class="btn btn-dark add-btn md" disabled></i>Add to Cart</button>
+
+
+            <hr style="height:1px;border:none;color:#000;background-color:#8B8B8B;">
+            <p><span class="Bold detail">DETAILS</span></p>
+            <p id="detail"></p>
+            <hr style="height:1px;border:none;color:#000;background-color:#8B8B8B;">
+            <footer>
+                <p><span class="Bold detail" data-toggle="modal" data-target="#helpModal">Need Help?</span></p>
+                <p><span class="Bold detail">Shipping & Returns</span></p>
+            </footer>
+        
+        
+        </div>  
+
+        
+  <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            
+            <div class="modal-header">
+              <h5 class="modal-title">Please add the quantity off the item you have selected</h5>
+              <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            
+            <div class="modal-body">
+              <span id="color1"></span>
+              <span class="modal-btn">
+                <button type="button" onclick="countDown()" class="btn  circle xl"><i class="fas fa-minus"></i></button>
+                <button type="button" id="countOnModal"class="btn  circle-no xl " disabled>0</button>
+                <button type="button" onclick="countUp()"class="btn  circle xl"><i class="fas fa-plus"></i></button>
+              </span>
+            </div>
+            
+            
+            <div class="modal-footer">
+                <button type="button" onclick="checkOut(), populate(), addItem2Table()" class="btn btn-outline-success" 
+            data-dismiss="modal">Agree</button>
+                <button type="button" onclick="reset()" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>  
+    
+    
+    <div class="modal fade" id="helpModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Help</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p>To add items in to the cart please select the colour first then click on the <strong>Add to Cart</strong> button to continue.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    
+    <div class="modal fade" id="checkoutModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            
+            
+            <div class="modal-header">
+                <h5 class="Bold modal-title">Please add the quantity off the item you have selected</h5>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            
+            
+            <div class="modal-body">
+                <table id="table" class="table table-hover">
+
+                </table>
+            </div>
+            
+            
+            <div class="modal-footer">
+                <button type="button" onclick="checkOut(), populate()" class="btn btn-outline-success" 
+            data-dismiss="modal">Agree</button>
+                <button type="button" onclick="reset()" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+            
+            </div>
+        </div>
+          </div>
+        
+        
+    </div>
+  </body>
+</html>
