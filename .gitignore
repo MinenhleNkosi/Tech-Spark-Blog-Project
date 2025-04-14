@@ -1,0 +1,48 @@
+# Build Folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Visual Studio specific
+.vscode/
+.vs/
+*.ncrunchsolution
+*.ncrunchproject
+*.cache
+*.pdb
+
+# Rider specific
+.idea/
+*.sln.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+packages/
+node_modules/
+
+# Configuration files
+appsettings*.json
+secrets.json
+
+# Generated files
+*.generated.cs
+*.g.cs
+*.g.i.cs
+
+# Entity Framework
+Migrations/
+
+# Publish output
+wwwroot/
