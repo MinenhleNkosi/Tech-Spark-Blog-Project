@@ -175,25 +175,19 @@ techspark/
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd techspark
-   ```
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
+```
 
 ## 📝 License
 
