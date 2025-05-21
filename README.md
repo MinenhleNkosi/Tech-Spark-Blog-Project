@@ -14,7 +14,7 @@
 # TechSpark
 
 <kbd>
-  <img src="https://github.com/MinenhleNkosi/Master-Design-Patterns-SOLID-Principles-in-C-Sharp/blob/main/Images/readme.png" height="600" width="1000" />
+  <img src="https://github.com/MinenhleNkosi/Tech-Spark-Blog-Project/blob/main/BackEnd/images/0.png" height="600" width="1000" />
 </kbd>
 
 ## 📱 Overview
