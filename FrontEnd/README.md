@@ -130,7 +130,7 @@
 - Cannot access restricted areas
 - Prompted to register or login for fuller experience
 
-### Visitor
+### Recruiter
 - Limited access to public content
 - Cannot access restricted areas except having access to Admin's portfolio
 - Prompted to register or login for fuller experience
